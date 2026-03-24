@@ -59,7 +59,7 @@ p6df::modules::gws::skills::init() {
 ######################################################################
 p6df::modules::gws::langs() {
 
-  (cd "$P6_DFZ_SRC_DIR/googleworkspace/cli" && cargo build --release)
+  p6_run_dir "$P6_DFZ_SRC_DIR/googleworkspace/cli" cargo build --release
 
   p6_return_void
 }

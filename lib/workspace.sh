@@ -19,11 +19,11 @@ p6df::modules::gws::delegation::setup() {
   gws auth setup
   gws auth login
 
-  print ""
-  print "Account '${delegated_email}' ready. Use gws directly:"
-  print "  gws gmail users messages list --params '{\"userId\": \"me\"}'"
-  print "  gws drive files list"
-  print "  gws calendar events list --params '{\"calendarId\": \"primary\"}'"
+  p6_echo ""
+  p6_msg "Account '${delegated_email}' ready. Use gws directly:"
+  p6_msg "  gws gmail users messages list --params '{\"userId\": \"me\"}'"
+  p6_msg "  gws drive files list"
+  p6_msg "  gws calendar events list --params '{\"calendarId\": \"primary\"}'"
 
   p6_return_void
 }
