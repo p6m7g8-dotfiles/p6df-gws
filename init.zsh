@@ -16,34 +16,17 @@ p6df::modules::gws::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::gws::init(_module, dir)
+# Function: p6df::modules::gws::skills::init(_module, _dir)
 #
 #  Args:
 #	_module -
-#	dir -
-#
-#>
-######################################################################
-p6df::modules::gws::init() {
-  local _module="$1"
-  local dir="$2"
-
-  p6_bootstrap "$dir"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::gws::skills::init(dir)
-#
-#  Args:
-#	dir - module dir (unused; gws generate-skills uses CWD)
+#	_dir -
 #
 #>
 ######################################################################
 p6df::modules::gws::skills::init() {
+  local _module="$1"
+  local _dir="$2"
 
   gws generate-skills
 
@@ -55,6 +38,7 @@ p6df::modules::gws::skills::init() {
 #
 # Function: p6df::modules::gws::langs()
 #
+#  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::gws::langs() {
@@ -69,11 +53,30 @@ p6df::modules::gws::langs() {
 #
 # Function: p6df::modules::gws::path::init()
 #
+#  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::gws::path::init() {
 
+  local _module="$1"
+  local _dir="$2"
   p6df::core::path::if "$P6_DFZ_SRC_DIR/googleworkspace/cli/target/release"
 
   p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: words gws $GOOGLE_APPLICATION_CREDENTIALS = p6df::modules::gws::profile::mod()
+#
+#  Returns:
+#	words - gws $GOOGLE_APPLICATION_CREDENTIALS
+#
+#  Environment:	 GOOGLE_APPLICATION_CREDENTIALS
+#>
+######################################################################
+p6df::modules::gws::profile::mod() {
+
+  p6_return_words 'gws' '$GOOGLE_APPLICATION_CREDENTIALS'
 }
