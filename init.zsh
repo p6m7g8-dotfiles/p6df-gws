@@ -78,5 +78,5 @@ p6df::modules::gws::path::init() {
 ######################################################################
 p6df::modules::gws::profile::mod() {
 
-  p6_return_words 'gws' '$GOOGLE_APPLICATION_CREDENTIALS'
+  p6_return_words 'gws' "$"
 }
