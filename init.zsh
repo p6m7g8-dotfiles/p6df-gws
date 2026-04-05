@@ -1,5 +1,11 @@
 # shellcheck shell=bash
 ######################################################################
+#<
+#
+# Function: p6df::modules::gws::deps()
+#
+#>
+######################################################################
 p6df::modules::gws::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6df-gcp
@@ -7,6 +13,13 @@ p6df::modules::gws::deps() {
   )
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::gws::path::init()
+#
+#  Environment:	 P6_DFZ_SRC_DIR
+#>
 ######################################################################
 p6df::modules::gws::path::init() {
 
@@ -18,6 +31,13 @@ p6df::modules::gws::path::init() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::gws::langs()
+#
+#  Environment:	 P6_DFZ_SRC_DIR
+#>
+######################################################################
 p6df::modules::gws::langs() {
 
   p6_run_dir "$P6_DFZ_SRC_DIR/googleworkspace/cli" cargo build --release
@@ -26,16 +46,20 @@ p6df::modules::gws::langs() {
 }
 
 ######################################################################
+#<
+#
+# Function: words gws $GOOGLE_APPLICATION_CREDENTIALS = p6df::modules::gws::profile::mod()
+#
+#  Returns:
+#	words - gws $GOOGLE_APPLICATION_CREDENTIALS
+#
+#  Environment:	 GOOGLE_APPLICATION_CREDENTIALS
+#>
+######################################################################
 p6df::modules::gws::profile::mod() {
 
   p6_return_words 'gws' '$GOOGLE_APPLICATION_CREDENTIALS'
 }
-######################################################################
-#<
-#
-# Function: p6df::modules::gws::deps()
-#
-#>
 ######################################################################
 #<
 #
@@ -56,27 +80,3 @@ p6df::modules::gws::skills::init() {
   p6_return_void
 }
 
-######################################################################
-#<
-#
-# Function: p6df::modules::gws::langs()
-#
-#  Environment:	 P6_DFZ_SRC_DIR
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::gws::path::init()
-#
-#  Environment:	 P6_DFZ_SRC_DIR
-#>
-######################################################################
-#<
-#
-# Function: words gws $GOOGLE_APPLICATION_CREDENTIALS = p6df::modules::gws::profile::mod()
-#
-#  Returns:
-#	words - gws $GOOGLE_APPLICATION_CREDENTIALS
-#
-#  Environment:	 GOOGLE_APPLICATION_CREDENTIALS
-#>
