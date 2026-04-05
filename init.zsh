@@ -16,7 +16,11 @@ p6df::modules::gws::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::gws::path::init()
+# Function: p6df::modules::gws::path::init(_module, _dir)
+#
+#  Args:
+#	_module -
+#	_dir -
 #
 #  Environment:	 P6_DFZ_SRC_DIR
 #>
@@ -48,10 +52,10 @@ p6df::modules::gws::langs() {
 ######################################################################
 #<
 #
-# Function: words gws $GOOGLE_APPLICATION_CREDENTIALS = p6df::modules::gws::profile::mod()
+# Function: words gws = p6df::modules::gws::profile::mod()
 #
 #  Returns:
-#	words - gws $GOOGLE_APPLICATION_CREDENTIALS
+#	words - gws
 #
 #  Environment:	 GOOGLE_APPLICATION_CREDENTIALS
 #>

@@ -37,9 +37,15 @@ TODO: Add a short summary of this module.
 
 - `p6df::modules::gws::deps()`
 - `p6df::modules::gws::langs()`
-- `p6df::modules::gws::path::init()`
-- `p6df::modules::gws::skills::init()`
-- `words gws $GOOGLE_APPLICATION_CREDENTIALS = p6df::modules::gws::profile::mod()`
+- `p6df::modules::gws::path::init(_module, _dir)`
+  - Args:
+    - _module
+    - _dir
+- `p6df::modules::gws::skills::init(_module, _dir)`
+  - Args:
+    - _module
+    - _dir
+- `words gws = p6df::modules::gws::profile::mod()`
 
 #### p6df-gws/lib
 
